@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
   <meta charset="UTF-8">
@@ -17,12 +17,25 @@
   <link rel="icon"
     href="https://media.licdn.com/dms/image/v2/D5635AQF8DEgIb-KRjA/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1723006679126?e=1756126800&v=beta&t=qDBrHlcpulpkidSfroyXgJ-GBzyOHRaj1-cfvZBdTT4"
     type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --primary-bg: #f8f9fa;
+      --secondary-bg: #ffffff;
+      --card-bg: #e9ecef;
+      --text-color: #343a40;
+      --accent-color: #007bff;
+      --accent-hover: #0056b3;
+      --border-color: #ced4da;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --input-bg: #f1f3f5;
+    }
+
     body {
-      
-      background: #f4f6f8;
+      font-family: 'Nunito', sans-serif;
+      background: var(--primary-bg);
+      color: var(--text-color);
       margin: 0;
       padding: 20px;
     }
@@ -32,146 +45,149 @@
       max-width: 1200px;
       margin: auto;
     }
-body {
-  font-family: 'Nunito', sans-serif;
-}
 
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
+    h1,
+    h2,
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
     /* TOOL SECTION */
-    :root {
-            --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            --card: rgba(28, 36, 46, 0.95);
-            --text: #f5f7fa;
-            --muted: #a9b0be;
-            --accent: #ffb347;
-            --accent2: #ffcc33;
-            --radius: 16px;
-            --shadow: 0 20px 50px rgba(0, 0, 0, .7);
-        }
-        
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            background: var(--bg);
-            color: var(--text);
-            padding: 20px;
-        }
-        
-        .app {
-            background: var(--card);
-            padding: 50px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            max-width: 880px;
-            width: 100%;
-            text-align: center;
-            backdrop-filter: blur(12px);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        h1 {
-            margin: 0 0 15px;
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--accent);
-        }
-        
-        .subtitle {
-            font-size: 17px;
-            margin-bottom: 30px;
-            color: var(--muted);
-        }
-        
-        label {
-            display: block;
-            margin: 12px 0 6px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        input,
-        select {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: #1f242e;
-            color: var(--text);
-            font-size: 15px;
-            margin-bottom: 14px;
-            transition: all 0.3s;
-        }
-        
-        input:focus,
-        select:focus {
-            outline: none;
-            background: #252b38;
-            box-shadow: 0 0 10px rgba(255, 204, 51, 0.4);
-        }
-        
-        button {
-            padding: 14px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            background: var(--accent);
-            color: #fff;
-            cursor: pointer;
-            margin: 16px 8px 0 0;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(255, 179, 71, 0.4);
-            transition: all .25s;
-        }
-        
-        button:hover {
-            background: var(--accent2);
-            box-shadow: 0 5px 20px rgba(255, 204, 51, 0.6);
-            transform: translateY(-3px);
-        }
-        
-        .meal-plan {
-            margin-top: 30px;
-        }
-        
-        .meal-card {
-            background: #222835;
-            padding: 14px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            font-size: 15px;
-            text-align: left;
-        }
-        
-        .calorie {
-            color: var(--muted);
-            font-size: 13px;
-            margin-top: 4px;
-        }
-        
-        h2 {
-            text-align: center;
-            margin-top: 25px;
-            font-size: 24px;
-            color: var(--accent2);
-        }
+    .app {
+      background: var(--secondary-bg);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      max-width: 880px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .app h1 {
+      margin: 0 0 15px;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--accent-color);
+    }
+
+    .subtitle {
+      font-size: 17px;
+      margin-bottom: 30px;
+      color: var(--text-color);
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--input-bg);
+      color: var(--text-color);
+      font-size: 15px;
+      margin-bottom: 14px;
+      transition: all 0.3s;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      background: #ffffff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+      border-color: var(--accent-color);
+    }
+
+    button {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: var(--accent-color);
+      color: #fff;
+      cursor: pointer;
+      margin: 16px 0 0;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      transition: all .25s ease-in-out;
+    }
+
+    button:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    #loading {
+      color: var(--accent-color);
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+    
+    .meal-category-section {
+        margin-top: 25px;
+        text-align: left;
+    }
+
+    .meal-category-section h3 {
+        color: var(--accent-color);
+        font-size: 24px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 5px;
+    }
+
+    .meal-card {
+      background: var(--card-bg);
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease-in-out;
+    }
+    
+    .meal-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .meal-timing {
+      font-size: 1rem;
+      color: var(--accent-color);
+      margin-bottom: 5px;
+    }
+
+    .calorie {
+      color: var(--text-color);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    
+    .ingredients {
+      color: var(--text-color);
+      font-size: 14px;
+      margin-top: 8px;
+    }
 
     /* BLOG LAYOUT */
     .blog-layout {
       display: flex;
-      gap: 20px;
+      gap: 30px;
+      flex-wrap: wrap;
     }
-.blog-layout p, section p{
-color:#000;
-}
+
     .left-col {
       flex: 2;
     }
@@ -181,28 +197,34 @@ color:#000;
     }
 
     section {
-      background: #fff;
-      padding: 20px;
+      background: var(--secondary-bg);
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
       margin-bottom: 30px;
     }
 
     .faq-item {
-      margin-bottom: 12px;
-      color:#000 !important;
+      margin-bottom: 15px;
     }
 
     .faq-item h3 {
       margin: 0;
       font-size: 1.1em;
       cursor: pointer;
+      color: var(--accent-color);
+      transition: color 0.2s;
+    }
+    
+    .faq-item h3:hover {
+        color: var(--accent-hover);
     }
 
     .faq-item p {
       margin: 5px 0 0;
       display: none;
-      color:#000;
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     /* AUTHOR CARD */
@@ -215,17 +237,32 @@ color:#000;
       height: 120px;
       border-radius: 50%;
       margin-bottom: 10px;
+      box-shadow: var(--shadow);
     }
 
     .social-links {
       width: 100%;
-      margin-top: 15px;
+      margin-top: 20px;
       border-collapse: collapse;
+      text-align: left;
     }
 
     .social-links td {
-      padding: 6px;
-      border: 1px solid #ccc;
+      padding: 8px;
+      border: 1px solid var(--border-color);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .blog-layout {
+            flex-direction: column;
+        }
+        .left-col, .right-col {
+            flex: auto;
+        }
+        .app {
+            padding: 20px;
+        }
     }
   </style>
 </head>
@@ -233,139 +270,215 @@ color:#000;
 <body>
   <main>
     <!-- TOOL FULL WIDTH -->
-        <div class="app">
-        <h1>🍽️ Healthy Meal Planner</h1>
-        <p class="subtitle">Enter your details and get a personalized daily meal plan with calorie breakdown.</p>
-        <div id="mealForm">
-            <label>Enter Name:</label>
-            <input id="name" placeholder="Your name">
-            <label>Enter Height (cm):</label>
-            <input id="height" type="number" placeholder="e.g. 170">
-            <label>Enter Weight (kg):</label>
-            <input id="weight" type="number" placeholder="e.g. 65">
-            <label>Select Goal:</label>
-            <select id="goal">
-        <option value="weight_loss">Weight Loss</option>
-        <option value="muscle_gain">Muscle Gain</option>
-        <option value="maintenance">Maintenance</option>
-      </select>
-            <button onclick="generateMealPlan()">🥗 Generate Meal Plan</button>
-        </div>
-        <div id="plans"></div>
+    <div class="app">
+      <h1>🍽️ Healthy Meal Planner</h1>
+      <p class="subtitle">Enter your details and get a personalized daily meal plan with calorie breakdown.</p>
+      <div id="mealForm">
+        <label for="name">Enter Name:</label>
+        <input id="name" placeholder="Your name">
+        <label for="height">Enter Height (cm):</label>
+        <input id="height" type="number" placeholder="e.g. 170">
+        <label for="weight">Enter Weight (kg):</label>
+        <input id="weight" type="number" placeholder="e.g. 65">
+        <label for="goal">Select Goal:</label>
+        <select id="goal">
+          <option value="weight_loss">Weight Loss</option>
+          <option value="muscle_gain">Muscle Gain</option>
+          <option value="maintenance">Maintenance</option>
+        </select>
+        <button onclick="generateMealPlan()">🥗 Generate Meal Plan</button>
+      </div>
+      <div id="loading">Generating your meal plan...</div>
+      <div id="plans"></div>
     </div>
 
     <script>
-        const basePlans = {
-            weight_loss: [{
-                meal: "Breakfast: Oatmeal with berries",
-                calories: 300
-            }, {
-                meal: "Snack: Greek yogurt with honey",
-                calories: 150
-            }, {
-                meal: "Lunch: Grilled chicken with quinoa and veggies",
-                calories: 450
-            }, {
-                meal: "Snack: Handful of almonds",
-                calories: 200
-            }, {
-                meal: "Dinner: Baked salmon with steamed broccoli",
-                calories: 400
-            }],
-            muscle_gain: [{
-                meal: "Breakfast: Scrambled eggs with avocado toast",
-                calories: 450
-            }, {
-                meal: "Snack: Protein shake",
-                calories: 250
-            }, {
-                meal: "Lunch: Brown rice, grilled chicken, and spinach",
-                calories: 500
-            }, {
-                meal: "Snack: Peanut butter with banana",
-                calories: 300
-            }, {
-                meal: "Dinner: Steak with sweet potatoes and green beans",
-                calories: 600
-            }],
-            maintenance: [{
-                meal: "Breakfast: Whole grain toast with boiled eggs",
-                calories: 350
-            }, {
-                meal: "Snack: Smoothie",
-                calories: 200
-            }, {
-                meal: "Lunch: Grilled fish with salad",
-                calories: 400
-            }, {
-                meal: "Snack: Nuts and seeds mix",
-                calories: 250
-            }, {
-                meal: "Dinner: Chicken stir-fry with vegetables",
-                calories: 450
-            }]
-        };
+      async function generateMealPlan() {
+        const name = document.getElementById('name').value;
+        const goal = document.getElementById('goal').value;
+        const height = parseFloat(document.getElementById('height').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+        const plansDiv = document.getElementById('plans');
+        const loadingDiv = document.getElementById('loading');
 
-        function calculateBMI(weight, height) {
-            let h = height / 100;
-            return (weight / (h * h)).toFixed(1);
+        // Simple validation
+        if (!name || !height || !weight || isNaN(height) || isNaN(weight)) {
+          plansDiv.innerHTML = '<p style="color:red; text-align:center;">Please fill in all fields with valid numbers.</p>';
+          return;
         }
 
-        function generateMealPlan() {
-            let name = document.getElementById('name').value;
-            let goal = document.getElementById('goal').value;
-            let height = parseFloat(document.getElementById('height').value);
-            let weight = parseFloat(document.getElementById('weight').value);
+        // Display loading indicator
+        plansDiv.innerHTML = '';
+        loadingDiv.style.display = 'block';
 
-            if (!name || !height || !weight) {
-                alert("Please fill in all fields!");
-                return;
+        const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+
+        try {
+          const prompt = `
+            You are a highly knowledgeable and professional AI dietitian.
+            Based on the following user details, generate a 5-meal daily plan for a ${goal.replace('_', ' ')} goal.
+            The meals must be categorized as: Breakfast, Snack, Lunch, Snack, and Dinner.
+            Each meal should be nutritionally balanced, easy to prepare, and accompanied by a brief list of factual, common ingredients and the approximate calorie count.
+            Crucially, provide an estimated time of day for each meal, as if you were a gym trainer providing a strict diet schedule.
+            The user's name is ${name}.
+            Their BMI is ${bmi}, calculated from a height of ${height} cm and a weight of ${weight} kg.
+            Please ensure the meal plan is suitable for their BMI and stated goal.
+            Provide the response as a JSON array of objects.
+
+            Example JSON format:
+            [
+              {
+                "category": "Breakfast",
+                "mealName": "Oatmeal with Berries and Nuts",
+                "mealTime": "8:00 AM",
+                "ingredients": ["1/2 cup rolled oats", "1 cup water or milk", "1/2 cup mixed berries", "1 tablespoon almonds"],
+                "calories": 320
+              },
+              {
+                "category": "Snack",
+                "mealName": "Greek Yogurt with Honey",
+                "mealTime": "11:00 AM",
+                "ingredients": ["1 cup Greek yogurt", "1 tablespoon honey"],
+                "calories": 180
+              }
+            ]
+          `;
+
+          const payload = {
+            contents: [{
+              parts: [{
+                text: prompt
+              }]
+            }],
+            generationConfig: {
+              responseMimeType: "application/json",
+              responseSchema: {
+                type: "ARRAY",
+                items: {
+                  type: "OBJECT",
+                  properties: {
+                    "category": {
+                      "type": "STRING"
+                    },
+                    "mealName": {
+                      "type": "STRING"
+                    },
+                    "mealTime": {
+                      "type": "STRING"
+                    },
+                    "ingredients": {
+                      "type": "ARRAY",
+                      "items": {
+                        "type": "STRING"
+                      }
+                    },
+                    "calories": {
+                      "type": "NUMBER"
+                    }
+                  },
+                  "propertyOrdering": ["category", "mealName", "mealTime", "ingredients", "calories"]
+                }
+              }
             }
+          };
 
-            let bmi = calculateBMI(weight, height);
-            let planDiv = document.getElementById('plans');
-            planDiv.innerHTML = `<h2>${name}'s ${goal.replace('_',' ')} Plan (BMI: ${bmi})</h2>`;
+          const apiKey = "";
+          const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
-            let meals = [...basePlans[goal]];
-
-            // Adjust based on BMI
-            if (bmi < 18.5) {
-                meals.push({
-                    meal: "Extra Snack: Smoothie with protein and nuts (for underweight)",
-                    calories: 300
-                });
-            } else if (bmi >= 25) {
-                meals = meals.map(m => ({...m,
-                    meal: m.meal + " (smaller portion)",
-                    calories: Math.round(m.calories * 0.8)
-                }));
-                meals.push({
-                    meal: "Evening Walk: 20 minutes",
-                    calories: 0
-                });
-            } else {
-                meals.push({
-                    meal: "Maintain hydration: Drink 8-10 glasses of water",
-                    calories: 0
-                });
+          // Implement a retry mechanism for API calls
+          const fetchWithRetry = async (url, options, retries = 3) => {
+            for (let i = 0; i < retries; i++) {
+              try {
+                const response = await fetch(url, options);
+                if (response.status === 429) {
+                  const delay = 2 ** i * 1000;
+                  console.log(`Rate limit exceeded. Retrying in ${delay / 1000}s...`);
+                  await new Promise(res => setTimeout(res, delay));
+                  continue;
+                }
+                if (!response.ok) {
+                    throw new Error(`API response status: ${response.status}`);
+                }
+                return response;
+              } catch (error) {
+                if (i === retries - 1) throw error;
+              }
             }
+          };
 
-            let totalCalories = 0;
-            meals.forEach(m => totalCalories += m.calories);
+          const response = await fetchWithRetry(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
 
-            meals.forEach(meal => {
-                let card = document.createElement('div');
-                card.className = 'meal-card';
-                card.innerHTML = `<div>${meal.meal}</div><div class='calorie'>Calories: ${meal.calories}</div>`;
-                planDiv.appendChild(card);
-            });
+          const result = await response.json();
+          const jsonString = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
-            let summary = document.createElement('div');
-            summary.className = 'meal-card';
-            summary.style.background = "#2e3a4d";
-            summary.innerHTML = `<strong>Total Daily Calories: ${totalCalories}</strong>`;
-            planDiv.appendChild(summary);
+          if (!jsonString) {
+            throw new Error('No JSON data found in API response.');
+          }
+
+          const meals = JSON.parse(jsonString);
+
+          // Categorize meals for display
+          const mealCategories = {
+            'Breakfast': [],
+            'Snack': [],
+            'Lunch': [],
+            'Dinner': [],
+            'Other': []
+          };
+          
+          let totalCalories = 0;
+
+          meals.forEach(meal => {
+              if (meal.category && mealCategories[meal.category]) {
+                  mealCategories[meal.category].push(meal);
+              } else {
+                  mealCategories['Other'].push(meal);
+              }
+              totalCalories += meal.calories || 0;
+          });
+
+          // Build HTML
+          let mealPlanHtml = `<h2>${name}'s ${goal.replace('_',' ')} Plan (BMI: ${bmi})</h2>`;
+
+          for (const category in mealCategories) {
+              if (mealCategories[category].length > 0) {
+                  mealPlanHtml += `<div class="meal-category-section"><h3>${category}</h3>`;
+                  mealCategories[category].forEach(meal => {
+                      const ingredientsList = meal.ingredients ? meal.ingredients.join(', ') : 'N/A';
+                      mealPlanHtml += `
+                        <div class="meal-card">
+                          <div class="meal-timing"><strong>${meal.mealTime}</strong></div>
+                          <div><strong>${meal.mealName}</strong></div>
+                          <div class="ingredients">Ingredients: ${ingredientsList}</div>
+                          <div class="calorie">Calories: ${meal.calories} kcal</div>
+                        </div>
+                      `;
+                  });
+                  mealPlanHtml += `</div>`;
+              }
+          }
+
+          mealPlanHtml += `
+            <div class="meal-card" style="background: var(--accent-color); color: #fff;">
+              <strong>Total Daily Calories: ${totalCalories} kcal</strong>
+            </div>
+          `;
+
+          plansDiv.innerHTML = mealPlanHtml;
+
+        } catch (error) {
+          console.error('Error generating meal plan:', error);
+          plansDiv.innerHTML = `<p style="color:red; text-align:center;">Failed to generate a meal plan. Please try again later.</p>`;
+        } finally {
+          loadingDiv.style.display = 'none';
         }
+      }
     </script>
 
     <!-- BLOG ROW -->
@@ -416,14 +529,14 @@ color:#000;
         <section class="present-data">
           <h2>How Meal Plans Are Generated</h2>
           <p>
-            The tool uses your <code>weight</code>, <code>height</code>, and selected goal to calculate BMI. Based on
-            that, it:
+            The tool uses your <code>weight</code>, <code>height</code>, and selected goal to calculate BMI. It then uses
+            a powerful AI model to:
           </p>
           <ul>
             <li>Suggests balanced meals across the day.</li>
-            <li>Reduces portion sizes for overweight BMI.</li>
-            <li>Adds snacks for underweight BMI.</li>
-            <li>Includes hydration or activity tips for balance.</li>
+            <li>Adjusts portion sizes and meal types based on your BMI.</li>
+            <li>Provides factual ingredients and calorie counts.</li>
+            <li>Includes additional lifestyle and health tips.</li>
           </ul>
         </section>
 
@@ -473,7 +586,8 @@ color:#000;
               </tr>
               <tr>
                 <td>💼 LinkedIn:</td>
-                <td><a href="https://in.linkedin.com/in/manthan-kushwaha-50125718b" target="_blank">linkedin.com/in/manthan-kushwaha</a></td>
+                <td><a href="https://in.linkedin.com/in/manthan-kushwaha-50125718b"
+                    target="_blank">linkedin.com/in/manthan-kushwaha</a></td>
               </tr>
               <tr>
                 <td>🐦 Twitter/X:</td>
