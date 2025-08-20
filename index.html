@@ -33,13 +33,128 @@
     }
 
     /* TOOL SECTION */
-    .app {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-    }
+    :root {
+            --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            --card: rgba(28, 36, 46, 0.95);
+            --text: #f5f7fa;
+            --muted: #a9b0be;
+            --accent: #ffb347;
+            --accent2: #ffcc33;
+            --radius: 16px;
+            --shadow: 0 20px 50px rgba(0, 0, 0, .7);
+        }
+        
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+        }
+        
+        .app {
+            background: var(--card);
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 880px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            margin: 0 0 15px;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+        
+        .subtitle {
+            font-size: 17px;
+            margin-bottom: 30px;
+            color: var(--muted);
+        }
+        
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #1f242e;
+            color: var(--text);
+            font-size: 15px;
+            margin-bottom: 14px;
+            transition: all 0.3s;
+        }
+        
+        input:focus,
+        select:focus {
+            outline: none;
+            background: #252b38;
+            box-shadow: 0 0 10px rgba(255, 204, 51, 0.4);
+        }
+        
+        button {
+            padding: 14px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background: var(--accent);
+            color: #fff;
+            cursor: pointer;
+            margin: 16px 8px 0 0;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 179, 71, 0.4);
+            transition: all .25s;
+        }
+        
+        button:hover {
+            background: var(--accent2);
+            box-shadow: 0 5px 20px rgba(255, 204, 51, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        .meal-plan {
+            margin-top: 30px;
+        }
+        
+        .meal-card {
+            background: #222835;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            text-align: left;
+        }
+        
+        .calorie {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 24px;
+            color: var(--accent2);
+        }
 
     /* BLOG LAYOUT */
     .blog-layout {
