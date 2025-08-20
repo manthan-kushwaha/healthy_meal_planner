@@ -42,8 +42,8 @@
         }
 
         main {
-            width: 93%;
-            
+            width: 100%;
+            max-width: 1200px;
             margin: auto;
         }
 
@@ -61,7 +61,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: var(--shadow);
-            max-width: 880px;
+            
             width: 100%;
             text-align: center;
             margin-bottom: 30px;
@@ -393,7 +393,7 @@
                         }
                     };
 
-                    const apiKey = "";
+                    const apiKey = "AIzaSyDl4tNqCG9dM5CVi-qEzTWrBszTmrou6YI";
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                     // Implement a retry mechanism for API calls
@@ -548,6 +548,8 @@
                         <li>Adjusts portion sizes and meal types based on your BMI.</li>
                         <li>Provides factual ingredients and calorie counts.</li>
                         <li>Includes additional lifestyle and health tips.</li>
+                        <li>Takes into account the selected diet type (vegetarian or non-vegetarian).</li>
+                        <li>Chooses affordable ingredients that are easy to find in an Indian diet.</li>
                     </ul>
                 </section>
 
