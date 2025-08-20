@@ -106,13 +106,140 @@
 <body>
   <main>
     <!-- TOOL FULL WIDTH -->
-    <div class="app">
-      <h2>🍽️ Healthy Meal Planner Tool</h2>
-      <p>Enter your details and generate a personalized daily meal plan with calorie breakdown.</p>
-      <!-- TOOL EMBED -->
-      <iframe src="healthy_meal_planner.html" width="100%" height="650px"
-        style="border: none; border-radius:12px;"></iframe>
+        <div class="app">
+        <h1>🍽️ Healthy Meal Planner</h1>
+        <p class="subtitle">Enter your details and get a personalized daily meal plan with calorie breakdown.</p>
+        <div id="mealForm">
+            <label>Enter Name:</label>
+            <input id="name" placeholder="Your name">
+            <label>Enter Height (cm):</label>
+            <input id="height" type="number" placeholder="e.g. 170">
+            <label>Enter Weight (kg):</label>
+            <input id="weight" type="number" placeholder="e.g. 65">
+            <label>Select Goal:</label>
+            <select id="goal">
+        <option value="weight_loss">Weight Loss</option>
+        <option value="muscle_gain">Muscle Gain</option>
+        <option value="maintenance">Maintenance</option>
+      </select>
+            <button onclick="generateMealPlan()">🥗 Generate Meal Plan</button>
+        </div>
+        <div id="plans"></div>
     </div>
+
+    <script>
+        const basePlans = {
+            weight_loss: [{
+                meal: "Breakfast: Oatmeal with berries",
+                calories: 300
+            }, {
+                meal: "Snack: Greek yogurt with honey",
+                calories: 150
+            }, {
+                meal: "Lunch: Grilled chicken with quinoa and veggies",
+                calories: 450
+            }, {
+                meal: "Snack: Handful of almonds",
+                calories: 200
+            }, {
+                meal: "Dinner: Baked salmon with steamed broccoli",
+                calories: 400
+            }],
+            muscle_gain: [{
+                meal: "Breakfast: Scrambled eggs with avocado toast",
+                calories: 450
+            }, {
+                meal: "Snack: Protein shake",
+                calories: 250
+            }, {
+                meal: "Lunch: Brown rice, grilled chicken, and spinach",
+                calories: 500
+            }, {
+                meal: "Snack: Peanut butter with banana",
+                calories: 300
+            }, {
+                meal: "Dinner: Steak with sweet potatoes and green beans",
+                calories: 600
+            }],
+            maintenance: [{
+                meal: "Breakfast: Whole grain toast with boiled eggs",
+                calories: 350
+            }, {
+                meal: "Snack: Smoothie",
+                calories: 200
+            }, {
+                meal: "Lunch: Grilled fish with salad",
+                calories: 400
+            }, {
+                meal: "Snack: Nuts and seeds mix",
+                calories: 250
+            }, {
+                meal: "Dinner: Chicken stir-fry with vegetables",
+                calories: 450
+            }]
+        };
+
+        function calculateBMI(weight, height) {
+            let h = height / 100;
+            return (weight / (h * h)).toFixed(1);
+        }
+
+        function generateMealPlan() {
+            let name = document.getElementById('name').value;
+            let goal = document.getElementById('goal').value;
+            let height = parseFloat(document.getElementById('height').value);
+            let weight = parseFloat(document.getElementById('weight').value);
+
+            if (!name || !height || !weight) {
+                alert("Please fill in all fields!");
+                return;
+            }
+
+            let bmi = calculateBMI(weight, height);
+            let planDiv = document.getElementById('plans');
+            planDiv.innerHTML = `<h2>${name}'s ${goal.replace('_',' ')} Plan (BMI: ${bmi})</h2>`;
+
+            let meals = [...basePlans[goal]];
+
+            // Adjust based on BMI
+            if (bmi < 18.5) {
+                meals.push({
+                    meal: "Extra Snack: Smoothie with protein and nuts (for underweight)",
+                    calories: 300
+                });
+            } else if (bmi >= 25) {
+                meals = meals.map(m => ({...m,
+                    meal: m.meal + " (smaller portion)",
+                    calories: Math.round(m.calories * 0.8)
+                }));
+                meals.push({
+                    meal: "Evening Walk: 20 minutes",
+                    calories: 0
+                });
+            } else {
+                meals.push({
+                    meal: "Maintain hydration: Drink 8-10 glasses of water",
+                    calories: 0
+                });
+            }
+
+            let totalCalories = 0;
+            meals.forEach(m => totalCalories += m.calories);
+
+            meals.forEach(meal => {
+                let card = document.createElement('div');
+                card.className = 'meal-card';
+                card.innerHTML = `<div>${meal.meal}</div><div class='calorie'>Calories: ${meal.calories}</div>`;
+                planDiv.appendChild(card);
+            });
+
+            let summary = document.createElement('div');
+            summary.className = 'meal-card';
+            summary.style.background = "#2e3a4d";
+            summary.innerHTML = `<strong>Total Daily Calories: ${totalCalories}</strong>`;
+            planDiv.appendChild(summary);
+        }
+    </script>
 
     <!-- BLOG ROW -->
     <div class="blog-layout">
